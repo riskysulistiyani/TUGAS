@@ -1,0 +1,777 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Repository Matakuliah Data Mining">
+      
+      
+        <link rel="canonical" href="https://riskysulistiyani.github.io/Data-Mining/Tugas%201/">
+      
+      
+        <meta name="author" content="Risky Sulistiyani">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>statistik deskriptif - Risky Sulistiyani</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" type="application/manifest+json" href="../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#memahami-data" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://riskysulistiyani.github.io/Data-Mining/" title="Risky Sulistiyani" aria-label="Risky Sulistiyani" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Risky Sulistiyani
+            </span>
+            <span class="md-header-nav__topic">
+              
+                statistik deskriptif
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://riskysulistiyani.github.io/Data-Mining/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Risky Sulistiyani
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link md-tabs__link--active">
+          Penambangan Data
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Home/" class="md-tabs__link">
+          Komputasi Numerik
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://riskysulistiyani.github.io/Data-Mining/" title="Risky Sulistiyani" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Risky Sulistiyani
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://riskysulistiyani.github.io/Data-Mining/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Risky Sulistiyani
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Penambangan Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Penambangan Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="index" class="md-nav__link">
+      index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        statistik deskriptif
+      </label>
+    
+    <a href="./" title="statistik deskriptif" class="md-nav__link md-nav__link--active">
+      statistik deskriptif
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistik-deskriptif" class="md-nav__link">
+    Statistik Deskriptif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh-program" class="md-nav__link">
+    Contoh Program
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pustaka" class="md-nav__link">
+    Pustaka
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tugas%202/" title="Mengukur Jarak" class="md-nav__link">
+      Mengukur Jarak
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tugas%203/" title="Missing Value" class="md-nav__link">
+      Missing Value
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DECISION%20TREE/" title="DECISION TREE" class="md-nav__link">
+      DECISION TREE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tugas%205%20-%20Clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tugas%206%20fuzzy%20clustering/" title="Fuzzy Clustering" class="md-nav__link">
+      Fuzzy Clustering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tugas%207%20-%20Regresi%20Linier%20Sederhana%20dan%20Berganda/" title="Regresi Linier Sederhana dan Berganda" class="md-nav__link">
+      Regresi Linier Sederhana dan Berganda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Komputasi Numerik
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Komputasi Numerik
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Home/" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Error%20in%20numerical%20computation/" title="Error in numerical computation" class="md-nav__link">
+      Error in numerical computation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistik-deskriptif" class="md-nav__link">
+    Statistik Deskriptif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contoh-program" class="md-nav__link">
+    Contoh Program
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pustaka" class="md-nav__link">
+    Pustaka
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="memahami-data">Memahami Data<a class="headerlink" href="#memahami-data" title="Permanent link">&para;</a></h1>
+<h2 id="statistik-deskriptif">Statistik Deskriptif<a class="headerlink" href="#statistik-deskriptif" title="Permanent link">&para;</a></h2>
+<p>Statistik deskriptif adalah metode dari pengorganisasian, penjumlahan, dan penyajian data dalam sebuah cara yang nyaman dan informatif, termasuk teknik grafik, dan teknik penghitungan.  Pada sesi tulisan ini teknik grafik tidak akan dibahas, penyajian teknik ini akan dijelaskan pada sesi tulisan yang lain.  Statistik deskriptif dapat mendeskripsikan data yang sedang dianalisis, tetapi tidak boleh menarik kesimpulan apapun dari data.  Untuk pengambilan keputusan, kita perlukan cabang dari ilmu statistik lainnya yaitu statistik inferensia.  Statistik inferensia akan dijelaskan pada sesi tulisan yang lain</p>
+<p><strong>Ukuran-ukuran statistik deskriptif</strong></p>
+<p>Ukuran statistik deskriptif dapat digolongkan menjadi dua kelompok, yaitu ukuran nilai tengah dan ukuran deviasi.  Ukuran nilai tengah terdiri dari rata-rata (<em>mean</em>), median, dan modus.  Sedangkan ukuran deviasi terdiri dari varians, simpangan baku, koefisien variasi, dan nilai jarak (<em>range</em>).  Ukuran-ukuran statistik deskriptif tersebut akan dijelaskan penggunaannya baik untuk data tunggal maupun data berkelompok.</p>
+<p><strong>Ukuran nilai tengah</strong></p>
+<p><strong>Rata-rata (Mean)</strong></p>
+<p>Rata-rata ditulis dengan menggunakan simbol  μ  (dibaca:”miu”) untuk menyatakan rata-rata populasi, dan<a href="https://digensia.files.wordpress.com/2012/03/x-bar3.png"><img alt="x bar" src="https://digensia.files.wordpress.com/2012/03/x-bar3.png?w=637" /></a>(dibaca: x bar) untuk menyatakan rata-rata sampel.  Secara aljabar rata-rata dapat ditulis sebagai berikut:</p>
+<p>​         untuk rata-rata populasi</p>
+<p>​                                                       <a href="https://digensia.files.wordpress.com/2012/03/rumus2.png"><img alt="rumus" src="https://digensia.files.wordpress.com/2012/03/rumus2.png?w=637" /></a></p>
+<p>​                        dimana N adalah banyaknya populasi</p>
+<p>​            untuk rata-rata sampel</p>
+<p>​                                                     <a href="https://digensia.files.wordpress.com/2012/03/rumus16.png"><img alt="rumus1" src="https://digensia.files.wordpress.com/2012/03/rumus16.png?w=637" /></a></p>
+<p>​                        dimana n adalah banyaknya sampel</p>
+<p>contoh:</p>
+<p>Dari 11 pohon pear menghasilkan buah dengan berat sbb (dlm Kg):</p>
+<p>330      284      326      268      236      346      326      402      374      292      380</p>
+<p>Hitunglah rata-rata produksi 11 pohon pear ?</p>
+<p><a href="https://digensia.files.wordpress.com/2012/03/r1.png"><img alt="R1" src="https://digensia.files.wordpress.com/2012/03/r1.png?w=637" /></a></p>
+<p>Jadi rata-rata produksi dari 11 pohon pear adalah 324 Kg.</p>
+<p><strong>Rata-rata untuk data berkelompok</strong>.</p>
+<p>Apabila data sudah disajikan dalam data berkelompok seperti dalam bentuk tabel frekuensi dimana observasi-observasi dikelompokan kedalam kelas-kelas yang disebut frekuensi, maka rumus rata-ratanya adalah sebagai berikut:</p>
+<p>​        <a href="https://digensia.files.wordpress.com/2012/03/r2.png"><img alt="R2" src="https://digensia.files.wordpress.com/2012/03/r2.png?w=444&amp;h=198" /></a></p>
+<p>Contoh:  Hitunglah rata-rata nilai statistik dari 50 mahasiswa pada Table 1 dibawah ini.</p>
+<p>​                                    <a href="https://digensia.files.wordpress.com/2012/03/r3.png"><img alt="R3" src="https://digensia.files.wordpress.com/2012/03/r3.png?w=427&amp;h=435" /></a></p>
+<p>​                      Jadi perkiraan rata-rata nilai statistik 50 mahasiswa adalah 65,7.</p>
+<p><strong>Median</strong></p>
+<p>Ukuran nilai tengah lainnya yang mungkin dapat merupakan pilihan selain rata-rata adalah median.  Jika data pada contoh produksi buah pear diurutkan dari nilai terkecil hingga ke nilai terbesar, maka nilai tengahnya adalah 326 kg  artinya lima pohon pear mempunyai produksi dibawahnya dan lima pohon pear mempunyai produksi diatasnya.  Nilai tengah inilah yang dikatakan <strong>median</strong>. Penentuan median bisa langsung didapat jika jumlah observasinya adalah ganjil, namun jika jumlah observasinya adalah genap maka akan didapat dua nilai tengah. Dalam situasi demikian, untuk mendapatkan mediannya yaitu dengan merata-ratakan dua nilai tengah yang didapat.  Prosedur untuk mendapatkan median yaitu harus mengurutkan data dari yang terkecil hingga yang terbesar terlebih dahulu sebelum mengambil nilai tengahnya.  Dengan kata lain median adalah data yang ke <a href="https://digensia.files.wordpress.com/2012/03/r41.png"><img alt="R4" src="https://digensia.files.wordpress.com/2012/03/r41.png?w=637" /></a> .</p>
+<p><strong>Median untuk data berkelompok</strong></p>
+<p>Untuk data yang sudah dikelompokkan dan disajikan dalam tabel frekuensi, maka mediannya dapat dicari dengan rumus sebagai berikut:</p>
+<p><a href="https://digensia.files.wordpress.com/2012/03/r5.png"><img alt="R5" src="https://digensia.files.wordpress.com/2012/03/r5.png?w=440&amp;h=211" /></a></p>
+<p><strong>Kelas median</strong> adalah kelas dimana terdapat nilai median di dalamnya. Untuk menentukan kelas median bagilah seluruh observasi dengan dua artinya 50 % dari seluruh observasi terletak sebelum median dan 50 % lainnya terletak sesudahnya.  Jika kita lihat tabel frekuensi (Tabel 1) maka mediannya merupakan observasi yang ke (50/2) yaitu yang ke 25.  Jumlah tiga frekuensi pertama (<em>f1 + f2 + f3</em>) yaitu  3 + 5 + 8 = 16.  Untuk mencapai 25 observasi diperlukan 9 observasi lagi.  9 observasi tersebut dapat dipenuhi dari frekuensi keempat (<em>f4</em>) karena jumlah observasi <em>f4</em> ada sebanyak 14 observasi.  Jadi median terletak pada kelas keempat atau kelas (60 – 69) dengan kata lain kelas keempat adalah kelas median.</p>
+<p>contoh:  Hitunglah nilai median dari data kelompok pada Tabel 1.</p>
+<p>solusi:</p>
+<p>​                        <a href="https://digensia.files.wordpress.com/2012/03/r6.png"><img alt="R6" src="https://digensia.files.wordpress.com/2012/03/r6.png?w=637" /></a></p>
+<p>Jadi mediannya,</p>
+<p>​                       <a href="https://digensia.files.wordpress.com/2012/03/r7.png"><img alt="R7" src="https://digensia.files.wordpress.com/2012/03/r7.png?w=637" /></a></p>
+<p>Pertanyaan yang mungkin timbul adalah jika kita punya data aslinya, apakah nilai median yang sebenarnya adalah 66,33?  jawabannya belum tentu, karena cara ini adalah cara interpolasi dimana data aslinya memang tidak diketahui, yang ada adalah data sudah dalam bentuk tabel frekuensi atau sudah dikelompokkan.  Walaupun hasil interpolasi ini mungkin tidak tepat, namun cara ini memberikan hasil yang mendekati nilai median yang sebenarnya.</p>
+<p><strong>Modus</strong></p>
+<p>Modus dari suatu kelompok observasi adalah nilai observasi yang mempunyai frekuensi pemunculan paling banyak atau dengan kata lain yaitu nilai yang paling banyak muncul.  Konsep dari modus ini berhubungan dengan kemunculan yang berulang-ulang dari suatu nilai observasi.</p>
+<p>Contoh:           jika kita gunakan data produksi 11 pohon pear, maka modus produksinya adalah 326 kg.</p>
+<p>Dalam kegiatan sehari-hari, modus adalah ukuran nilai tengah yang paling jarang digunakan dibanding rata-rata atau median.  Modus mungkin lebih sering digunakan pada data yang mempunyai banyak variasi dalam ukurannya, itupun untuk jumlah data yang besar.  Sebagai contoh modus dari ukuran barang yang terjual sering digunakan untuk mengetahui barang yang paling disenangi konsumen.</p>
+<p>Suatu distribusi atau kelompok data mungkin tidak mempunyai modus atau mungkin mempunyai modus lebih dari satu.  Distribusi yang mempunyai satu modus disebut Unimodus, yang mempunyai dua modus disebut Bimodus dan yang mempunyai modus lebih dari dua disebut Multimodus.  contoh:  Tentukan modus dari data dibawah ini, jika ada tentukan nilainya.</p>
+<p>a).        2,         3,         5,         7,         8.</p>
+<p>b).        2,         5,         7,         9,         9,         9,         10,       10,       11,       12.</p>
+<p>c).        2,         3,         4,         4,         4,         5,         5,         7,         7,         7,         9.</p>
+<p>solusi:</p>
+<p>Data a) tidak mempunyai modus karena semua nilai mempunyai frekuensi yang sama.</p>
+<p>Data b) mempunyai modus = 9, karena nilai observasi ini mempunyai frekuensi paling banyak.</p>
+<p>Data c) mempunyai dua modus yaitu 4 dan 7,  dua nilai observasi tersebut mempunyai frekuensi palingbanyak dan sama banyak.</p>
+<p><strong>Modus untuk data berkelompok</strong></p>
+<p>Apabila data sudah dikelompokkan dan disajikan dalam tabel frekuensi, maka modusnya mempunyai rumus sebagai berikut:</p>
+<p>​      <a href="https://digensia.files.wordpress.com/2012/03/r8.png"><img alt="R8" src="https://digensia.files.wordpress.com/2012/03/r8.png?w=435&amp;h=202" /></a></p>
+<p><strong>Kelas modus</strong> adalah kelas dimana terdapat nilai modus di dalamnya.</p>
+<p>Contoh:           Hitunglah nilai modus dari data kelompok pada Tabel 1.</p>
+<p>solusi:              Kelas modus adalah kelompok (60 – 69), karena kelompok ini mempunyai frekuensi paling banyak.</p>
+<p>​                          <a href="https://digensia.files.wordpress.com/2012/03/r9.png"><img alt="R9" src="https://digensia.files.wordpress.com/2012/03/r9.png?w=334&amp;h=154" /></a></p>
+<p><strong>Ukuran dispersi</strong></p>
+<p><strong>Varians</strong></p>
+<p>Dengan ukuran nilai tengah saja kita tidak akan pernah cukup untuk memberikan ringkasan karakteristik dari sebuah set data.  Bagaimana sebaran observari dari nilai rata-ratanya? Apakah observasi mempunyai dispersi atau penyimpangan yang besar dari rata-ratanya?   Kita biasanya memerlukan ukuran lainnya yaitu suatu ukuran tentang dispersi atau variasi didalam data. Pada kenyataannya nilai-nilai observasi suatu populasi ada yang lebih besar dari rata-rata dan ada yang lebih kecil dari rata.  Informasi ini yang biasanya merupakan keterangan tambahan mengenai karakteristik dari satu set data yaitu informasi mengenai jumlah penyimpangan dalam data. Biasanya kita tertarik dengan penyimpangan nilai-nilai observasi dalam data terhadap rata-ratanya yaitu selisihnya. Rata-rata dari selisih kuadrat tersebut merupakan suatu ukuran penyimpangan yang biasa disebut dengan <strong>varians</strong> dari observasi.  Simbol varians pada ukuran populasi adalah <a href="https://digensia.files.wordpress.com/2012/03/rumus101.png"><img alt="rumus10" src="https://digensia.files.wordpress.com/2012/03/rumus101.png?w=637" /></a> (dibaca: sigma kuadrat) dan pada ukuran sampel adalah <em>s</em><em>2</em>.</p>
+<p><strong>Simpangan baku</strong></p>
+<p>Akar dari varians dinamakan standar deviasi atau simpangan baku. Standar deviasi merupakan ukuran simpangan yang sering digunakan dalam analisa.    Nilai standar deviasi pada dasarnya menggambarkan besaran sebaran suatu kelompok data terhadap rata-ratanya atau dengan kata lain gambaran keheterogenan suatu kelompok data. Formula standar deviasi adalah sebagai berikut:</p>
+<p>​                 <a href="https://digensia.files.wordpress.com/2012/03/r10.png"><img alt="R10" src="https://digensia.files.wordpress.com/2012/03/r10.png?w=291&amp;h=300" /></a></p>
+<p>Contoh:  jika kita gunakan data produksi 11 pohon pear, maka varians produksinya adalah:</p>
+<p><a href="https://digensia.files.wordpress.com/2012/03/r11.png"><img alt="R11" src="https://digensia.files.wordpress.com/2012/03/r11.png?w=384&amp;h=96" /></a></p>
+<p>Dari hasil perhitungan didapat varians produksi dari 11 pohon pear adalah sebesar 2.575,2 kg.  sehingga standar deviasi produksinya adalah sebesar 50,75 kg.</p>
+<p>katakan kita mempunyai data produksi (dalam kg) sebanyak 10 pohon pear dengan jenis yang berbeda dengan kelompok 11 pohon pear sebelumnya, yaitu:</p>
+<p>230      475      366      268      136      330      326      402      215      492</p>
+<p>kelompok ini mempunyai nilai rata-rata yang sama dengan kelompok 11 pohon pear sebelumnya yaitu sebasar 324 kg.  Apakah dua kelompok pohon pear tersebut mempunyai kemampuan produksi yang sama?  atau dengan kata lain kelompok pohon pear mana yang lebih konsisten dalam berproduksi?  Jika harus memilih jenis pohon pear mana yang lebih konsisten berproduksi, maka kita akan memilih pohon pear pada kelompok yang mempunyai nilai varians terkecil (kelompok yang lebih homogen).</p>
+<p><strong>Varians untuk data berkelompok</strong></p>
+<p>Formula varians untuk data berkelompok adalah sebagai berikut:</p>
+<p>​    <a href="https://digensia.files.wordpress.com/2012/03/r12.png"><img alt="R12" src="https://digensia.files.wordpress.com/2012/03/r12.png?w=433&amp;h=200" /></a></p>
+<p>contoh:  kita gunakan data nilai statistik 50 mahasiswa.</p>
+<p><a href="https://digensia.files.wordpress.com/2012/03/r13.png"><img alt="R13" src="https://digensia.files.wordpress.com/2012/03/r13.png?w=573&amp;h=286" /></a></p>
+<p><strong>Koefisien variasi</strong></p>
+<p>Standar deviasi dapat mengukur keheterogenan atau variasi suatu kelompok data.  Namun jika kita ingin membandingkan dua kelompok data yang mempunyai ukuran yang berbeda, standar deviasi tidak dapat digunakan artinya standar deviasi yang lebih besar tidak selalu berarti kelompok data tersebut lebih heterogen  Untuk keperluan perbandingan dua kelompok data tanpa melihat ukuran satuannya, maka dapat digunakan suatu ukuran variasi yang dinamakan koefisien variasi (CV).  Rumus CV dituliskan sebagai berikut:</p>
+<p>​       <a href="https://digensia.files.wordpress.com/2012/03/r14.png"><img alt="R14" src="https://digensia.files.wordpress.com/2012/03/r14.png?w=234&amp;h=83" /></a></p>
+<p>Jika CV1 &gt; CV2 berarti kelompok data pertama lebih bervariasi atau lebih heterogen dari pada kelompok kedua.</p>
+<p><strong>Ukuran nilai jarak (Range)</strong></p>
+<p>Ukuran dispersi yang paling sederhana pada suatu data numerik mungkin dengan cara menghitung selisih nilai terbesar (nilai maksimum) dengan nilai terkecil (nilai minimum).  Cara ini dikenal dengan sebutan <em>Range</em>.</p>
+<p><em>Range</em> = Nilai maksimum – Nilai minimum.</p>
+<p><em>Range</em> produksi 11 pohon pear = 402 – 306  =  96</p>
+<p><strong>Ukuran</strong> <strong>Range</strong>  <strong>untuk data berkelompok</strong></p>
+<p>Untuk data berkelompok, nilai range dihitung berdasarkan selisih antara nilai tengah kelas terakhir dengan nilai tengah pertama atau selisih batas atas kelas terakhir dengan batas bawah kelas pertama.</p>
+<p><em>Range</em> = Nilai tengah kelas terakhir – Nilai tengah kelas pertama.</p>
+<p>atau</p>
+<p><em>Range</em> = Bonderi atas kelas terakhir – Bonderi bawah kelas pertama.</p>
+<p>dari data nilai statistik 50 mahasiswa pada tabel 1, nilai <em>range</em>nya adalah:</p>
+<p><em>Range</em> =  94,5 – 34,5  =  60  (cara ini cenderung menghilangkan nilai ekstrim).</p>
+<p>atau</p>
+<p><em>Range</em> =  99,5 – 29,5  =  70.</p>
+<h2 id="contoh-program">Contoh Program<a class="headerlink" href="#contoh-program" title="Permanent link">&para;</a></h2>
+<p>File tambahannya lihat <a href="https://github.com/riskysulistiyani/Penambangan-Data.git">disini</a></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;stats&quot;</span><span class="p">:[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span><span class="s1">&#39;Standart Deviasi&#39;</span><span class="p">,</span> <span class="s1">&#39;Variasi&#39;</span><span class="p">,</span><span class="s1">&#39;Skewnes&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;Quartile 1&#39;</span><span class="p">,</span><span class="s1">&#39;Quartile 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Quartile 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Median&#39;</span><span class="p">,</span><span class="s1">&#39;Modus&#39;</span><span class="p">]}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span><span class="mi">2</span><span class="p">),</span> 
+               <span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">),</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">),</span> <span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">mode</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">kd</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">kd</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h3 id="pustaka">Pustaka<a class="headerlink" href="#pustaka" title="Permanent link">&para;</a></h3>
+<p>https://digensia.wordpress.com/2012/03/15/statistik-deskriptif/</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="index" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                index
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Tugas%202/" title="Mengukur Jarak" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Mengukur Jarak
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Risky Sulistiyani
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/riskysulistiyani/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
